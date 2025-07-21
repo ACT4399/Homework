@@ -99,7 +99,6 @@ $ ./sigma
 
 using namespace std;
 
-// 遞迴產生 powerset
 void generatePowerset(const string& set, string current, int index) {
     if (index == set.length()) {
         cout << "{ ";
@@ -110,10 +109,8 @@ void generatePowerset(const string& set, string current, int index) {
         return;
     }
 
-    // 不包含當前字元
     generatePowerset(set, current, index + 1);
 
-    // 包含當前字元
     generatePowerset(set, current + set[index], index + 1);
 }
 
